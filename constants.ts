@@ -15,7 +15,7 @@ export const NAV_ITEMS = [
 ];
 
 export const HERO_COPY = {
-  headline: "We own AI workflows in \nhigh-stakes operations.",
+  headline: "We own AI workflows in high-stakes operations.",
   subHeadline: "We design, build, and run production AI workflows and stay accountable for them in your environment.",
   supporting: "So your teams don’t have to manage the mess when things break.",
   cta: "Talk to us about your AI workflows",

@@ -7,7 +7,7 @@ export const Engagements: React.FC = () => {
   return (
     <section className="py-24 bg-background border-b border-stone-200" id="case-studies">
       <Container>
-        <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-6">
           <h2 className="text-3xl font-semibold text-primary tracking-tight">
             Selected engagements
           </h2>
@@ -24,12 +24,12 @@ export const Engagements: React.FC = () => {
                 Automated customs declaration workflow involving multi-modal document processing and error correction.
               </p>
             </div>
-            
+
             <div className="pt-8">
-               <Button variant="outline" className="w-full sm:w-auto text-sm py-3 px-6">
-                 Read case study 
-                 <ArrowRight className="ml-2 w-4 h-4" />
-               </Button>
+              <Button variant="outline" className="w-full sm:w-auto text-sm py-3 px-6">
+                Read case study
+                <ArrowRight className="ml-2 w-4 h-4" />
+              </Button>
             </div>
           </div>
 
@@ -45,10 +45,10 @@ export const Engagements: React.FC = () => {
             </div>
 
             <div className="pt-8">
-               <Button variant="outline" className="w-full sm:w-auto text-sm py-3 px-6">
-                 Read case study 
-                 <ArrowRight className="ml-2 w-4 h-4" />
-               </Button>
+              <Button variant="outline" className="w-full sm:w-auto text-sm py-3 px-6">
+                Read case study
+                <ArrowRight className="ml-2 w-4 h-4" />
+              </Button>
             </div>
           </div>
         </div>

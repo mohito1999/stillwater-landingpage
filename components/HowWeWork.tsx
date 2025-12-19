@@ -20,9 +20,7 @@ export const HowWeWork: React.FC = () => {
                 <span>STEP</span>
                 <span>{step.number}</span>
               </div>
-              
-              {/* Vertical line visual */}
-              <div className="absolute left-0 top-12 bottom-0 w-px bg-stone-200 md:hidden" />
+
 
               <h3 className="text-xl font-medium text-primary mb-3">
                 {step.title}

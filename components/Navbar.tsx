@@ -1,30 +1,43 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { Container } from './ui/Container';
 import { COMPANY_NAME, NAV_ITEMS } from '../constants';
-import { ChevronDown } from 'lucide-react';
+import { ChevronDown, Menu, X } from 'lucide-react';
 import { useNavigation } from '../hooks/useNavigation';
 import { Logo } from './Logo';
 
 export const Navbar: React.FC = () => {
   const { pathname, hash } = useLocation();
   const { handleNavigation } = useNavigation();
-
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <nav className="w-full border-b border-stone-200 bg-background/95 backdrop-blur-sm sticky top-0 z-50">
       <Container>
-        <div className="flex flex-col md:flex-row items-start md:items-center justify-between py-6 md:py-8 gap-4 md:gap-0">
-          {/* Logo / Company Name */}
-          <div className="flex-shrink-0 cursor-pointer flex items-center gap-1.5" onClick={(e) => handleNavigation(e, '#')}>
-            <Logo className="w-8 h-8 text-primary" />
-            <span className="text-xl font-bold tracking-tight text-primary uppercase select-none">
-              {COMPANY_NAME}
-            </span>
+        <div className="flex flex-col md:flex-row items-start md:items-center justify-between py-4 md:py-8 gap-4 md:gap-0">
+          <div className="w-full md:w-auto flex items-center justify-between">
+            {/* Logo / Company Name */}
+            <div className="flex-shrink-0 cursor-pointer flex items-center gap-1.5" onClick={(e) => {
+              handleNavigation(e, '#');
+              setIsOpen(false);
+            }}>
+              <Logo className="w-8 h-8 text-primary" />
+              <span className="text-xl font-bold tracking-tight text-primary uppercase select-none">
+                {COMPANY_NAME}
+              </span>
+            </div>
+
+            {/* Mobile Toggle */}
+            <button
+              className="md:hidden p-2 text-stone-600 hover:text-stone-900 focus:outline-none"
+              onClick={() => setIsOpen(!isOpen)}
+            >
+              {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
           </div>
 
           {/* Navigation Items */}
-          <div className="flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-8 lg:gap-12">
+          <div className={`${isOpen ? 'flex' : 'hidden'} md:flex flex-col md:flex-row w-full md:w-auto items-start md:items-center gap-4 md:gap-8 lg:gap-12 pb-4 md:pb-0`}>
             {NAV_ITEMS.map((item) => {
               if (item.children) {
                 return (
@@ -40,7 +53,10 @@ export const Navbar: React.FC = () => {
                           <a
                             key={child.label}
                             href={child.href}
-                            onClick={(e) => handleNavigation(e, child.href)}
+                            onClick={(e) => {
+                              handleNavigation(e, child.href);
+                              setIsOpen(false);
+                            }}
                             className="block px-4 py-2 text-sm text-secondary hover:text-accent-blue hover:bg-stone-50 transition-colors cursor-pointer"
                           >
                             {child.label}
@@ -59,6 +75,7 @@ export const Navbar: React.FC = () => {
                   key={item.label}
                   href={isWorkWithUs ? undefined : item.href} // prevent navigation for work-with-us
                   onClick={(e) => {
+                    setIsOpen(false);
                     if (!isWorkWithUs) handleNavigation(e, item.href);
                     // Cal.com handles the click for work-with-us via data attributes
                   }}

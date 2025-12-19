@@ -50,7 +50,7 @@ export const Hero: React.FC = () => {
               </p>
               <div className="pt-2">
                 <Button
-                  className="h-16 px-10 text-lg"
+                  className="h-16 px-4 sm:px-10 text-sm sm:text-lg w-full sm:w-auto !justify-start sm:!justify-center whitespace-nowrap"
                   data-cal-link="mohitatneurix/stillwater-intro-chat"
                   data-cal-namespace="stillwater-intro-chat"
                   data-cal-config='{"layout":"month_view"}'
