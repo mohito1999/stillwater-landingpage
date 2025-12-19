@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+  <!-- Primary Meta Tags -->
+  <title>Stillwater | Production AI Workflows for High-Stakes Operations</title>
+  <meta name="title" content="Stillwater | Production AI Workflows for High-Stakes Operations" />
+  <meta name="description"
+    content="We design, build, and run production AI workflows in high-stakes operations. We take ownership of the outcomes, not just the code." />
+  <meta name="keywords"
+    content="AI services, operational AI, logistics AI, healthcare RCM AI, production AI, automated workflows" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://stillwater.ai/" />
+  <meta property="og:title" content="Stillwater | Production AI Workflows for High-Stakes Operations" />
+  <meta property="og:description"
+    content="We design, build, and run production AI workflows in high-stakes operations. We don't sell software; we own outcomes." />
+  <meta property="og:image" content="https://stillwater.ai/og-image.jpg" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://stillwater.ai/" />
+  <meta property="twitter:title" content="Stillwater | Production AI Workflows for High-Stakes Operations" />
+  <meta property="twitter:description"
+    content="We design, build, and run production AI workflows in high-stakes operations. We take ownership of the outcomes." />
+  <meta property="twitter:image" content="https://stillwater.ai/og-image.jpg" />
+
+  <!-- LLM/AI Friendly Metadata (JSON-LD) -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Stillwater",
+      "url": "https://stillwater.ai",
+      "logo": "https://stillwater.ai/favicon.svg",
+      "description": "Stillwater designs, builds, and runs production AI workflows in logistics and healthcare operations. We take end-to-end accountability for operational outcomes.",
+      "sameAs": [
+        "https://www.linkedin.com/company/stillwater-ai"
+      ]
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            primary: '#1c1917', // stone-900 (Text)
+            secondary: '#57534e', // stone-600 (Subtext)
+            background: '#fafaf9', // stone-50 (Bg)
+            surface: '#f5f5f4', // stone-100 (Cards)
+            accent: '#292524', // stone-800
+            'accent-blue': '#1c1917', // stone-900 (Same as primary - Lighter Black)
+            'accent-blue-hover': '#292524', // stone-800 (Slightly lighter on hover)
+          },
+          keyframes: {
+            'scan': {
+              '0%': { top: '-100%' },
+              '100%': { top: '100%' },
+            },
+            'pulse-subtle': {
+              '0%, 100%': { opacity: '0.1' },
+              '50%': { opacity: '0.2' },
+            },
+            'drift': {
+              '0%': { transform: 'translate(0, 0)' },
+              '50%': { transform: 'translate(20px, -20px)' },
+              '100%': { transform: 'translate(0, 0)' },
+            }
+          },
+          animation: {
+            'scan-slow': 'scan 15s linear infinite',
+            'scan-fast': 'scan 10s linear infinite',
+            'pulse-subtle': 'pulse-subtle 6s ease-in-out infinite',
+            'drift-slow': 'drift 20s ease-in-out infinite',
+            'drift-medium': 'drift 15s ease-in-out infinite',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: #fafaf9;
+      color: #1c1917;
+      font-family: 'Inter', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* Subtle grid utility */
+    .bg-grid {
+      background-size: 40px 40px;
+      background-image: linear-gradient(to right, rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+    }
+  </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "lucide-react": "https://esm.sh/lucide-react@^0.561.0"
+  }
+}
+</script>
+  <link rel="stylesheet" href="/index.css">
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+
+</html>
