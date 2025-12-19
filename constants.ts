@@ -18,7 +18,7 @@ export const HERO_COPY = {
   headline: "We own AI workflows in \nhigh-stakes operations.",
   subHeadline: "We design, build, and run production AI workflows and stay accountable for them in your environment.",
   supporting: "So your teams don’t have to manage the mess when things break.",
-  cta: "Talk to us about a broken workflow",
+  cta: "Talk to us about your AI workflows",
 };
 
 export const PROBLEM_COPY = {
