@@ -1,10 +1,12 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Container } from './ui/Container';
 import { Button } from './ui/Button';
 import { HEALTHCARE_COPY } from '../constants';
 import { ArrowRight, CheckSquare, ShieldCheck, AlertTriangle } from 'lucide-react';
 
 export const HealthcareRCMPage: React.FC = () => {
+    const navigate = useNavigate();
     return (
         <div className="flex flex-col animate-fade-in">
             {/* SECTION 1: HERO */}
@@ -182,7 +184,11 @@ export const HealthcareRCMPage: React.FC = () => {
                             <p className="text-lg text-stone-400 leading-relaxed mb-8">
                                 {HEALTHCARE_COPY.caseStudy.description}
                             </p>
-                            <Button variant="outline" className="border-stone-600 text-stone-300 hover:bg-white hover:text-primary hover:border-white transition-all duration-300">
+                            <Button
+                                variant="outline"
+                                className="border-stone-600 !text-stone-300 hover:bg-white hover:text-primary hover:border-white transition-all duration-300"
+                                onClick={() => navigate(HEALTHCARE_COPY.caseStudy.link)}
+                            >
                                 {HEALTHCARE_COPY.caseStudy.cta} <ArrowRight className="ml-2 w-4 h-4" />
                             </Button>
                         </div>

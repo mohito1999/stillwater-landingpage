@@ -4,8 +4,10 @@ import { Button } from './ui/Button';
 import { LOGISTICS_COPY } from '../constants';
 import { ArrowRight, CheckSquare, ShieldCheck, AlertTriangle } from 'lucide-react';
 import { useNavigation } from '../hooks/useNavigation';
+import { useNavigate } from 'react-router-dom';
 
 export const LogisticsPage: React.FC = () => {
+  const navigate = useNavigate();
   const { handleNavigation } = useNavigation();
 
   return (
@@ -185,7 +187,11 @@ export const LogisticsPage: React.FC = () => {
               <p className="text-lg text-stone-400 leading-relaxed mb-8">
                 {LOGISTICS_COPY.caseStudy.description}
               </p>
-              <Button variant="outline" className="border-stone-600 text-stone-300 hover:bg-white hover:text-primary hover:border-white transition-all duration-300">
+              <Button
+                variant="outline"
+                className="border-stone-600 text-stone-300 hover:bg-white hover:text-primary hover:border-white transition-all duration-300"
+                onClick={() => navigate(LOGISTICS_COPY.caseStudy.link)}
+              >
                 {LOGISTICS_COPY.caseStudy.cta} <ArrowRight className="ml-2 w-4 h-4" />
               </Button>
             </div>

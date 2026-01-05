@@ -159,7 +159,8 @@ export const LOGISTICS_COPY = {
     description: "Processing 50,000+ monthly shipments across 12 distinct regulatory zones. We deployed a production AI layer that autonomously validates documentation, reconciles HS codes against real-time tariffs, and pre-clears cargo before arrival.",
     stat: "65% reduction in port dwell time",
     context: "CLIENT: REGIONAL LOGISTICS LEADER (DUBAI) \nFOCUS: AUTONOMOUS CLEARANCE",
-    cta: "Read full case study"
+    cta: "Read full case study",
+    link: "/case-studies/logistics-01"
   },
   engagement: {
     title: "How engagements start",
@@ -247,11 +248,12 @@ export const HEALTHCARE_COPY = {
   ],
   caseStudy: {
     label: "Featured Engagement",
-    headline: "Autonomous denial management for a regional health system",
-    description: "Processing hundreds of thousands of annual claims across multiple payers. We deployed a production AI layer that classifies denials, routes rework intelligently, and coordinates resubmissions — reducing manual effort and accelerating cash recovery.",
-    stat: "40% reduction in denial rework cycle time",
-    context: "CLIENT: Regional Health System (US) \nFOCUS: Denial Management & Rework",
-    cta: "Read full case study"
+    headline: "Autonomous Prior Authorization for an RCM Provider",
+    description: "Processing thousands of authorization requests daily. We deployed a production AI layer that ingests clinical docs, syncs with the EHR, and uses AI voice agents to call insurers — reducing cycle time by 45%.",
+    stat: "45% reduction in authorization turnaround time",
+    context: "CLIENT: OFFSHORE RCM PROVIDER \nFOCUS: PRIOR AUTH & AI VOICE AGENTS",
+    cta: "Read full case study",
+    link: "/case-studies/healthcare-prior-auth"
   },
   engagement: {
     title: "How engagements typically start",
@@ -293,12 +295,12 @@ export const CASE_STUDIES_COPY = {
       link: "/case-studies/logistics-01"
     },
     {
-      id: "healthcare-01",
-      industry: "Healthcare revenue cycle",
-      title: "Denial management automation for a regional health system",
-      summary: "Designed, built, and ran a production AI workflow handling claims denials across multiple payers, accelerating cash recovery cycles.",
-      outcome: "40% reduction in denial rework cycle time",
-      link: "/case-studies/healthcare-01" // Placeholder link for now
+      id: "healthcare-prior-auth",
+      industry: "Healthcare RCM",
+      title: "Autonomous Prior Authorization for an RCM Provider",
+      summary: "End-to-end automation of prior authorization workflows using AI document processing and voice agents for insurer communications.",
+      outcome: "45% reduction in turnaround time",
+      link: "/case-studies/healthcare-prior-auth"
     },
     // Adding duplicates to demonstrate grid layout as per plan
     {
@@ -311,11 +313,11 @@ export const CASE_STUDIES_COPY = {
     },
     {
       id: "healthcare-02",
-      industry: "Healthcare revenue cycle",
+      industry: "Healthcare RCM",
       title: "Eligibility & benefits verification automation",
-      summary: "Real-time eligibility checks integrated into the patient intake flow, preventing downstream denials.",
-      outcome: "30% increase in clean claim rate",
-      link: "/case-studies/healthcare-02" // Placeholder link
+      summary: "AI voice agents handling coverage checks for a medical supply company, reducing 30-minute insurer calls to seconds.",
+      outcome: "55% reduction in verification time",
+      link: "/case-studies/healthcare-catheter-coverage"
     }
   ],
   reinforcement: {
@@ -434,6 +436,222 @@ export const CASE_STUDIES_CONTENT = {
     },
     cta: {
       headline: "If customs clearance is slowing you down, we should talk.",
+      button: "Start a conversation"
+    }
+  },
+  "healthcare-prior-auth": {
+    hero: {
+      label: "CASE STUDY — OFFSHORE RCM & PRIOR AUTH",
+      title: "Autonomous Prior Authorization for a Major RCM Provider",
+      summary: "Designed, built, and ran a production AI workflow that autonomously handles prior authorization requests — from document ingestion and EHR syncing to placing live AI calls to insurers.",
+      outcome: {
+        value: "45%",
+        label: "reduction in authorization turnaround time"
+      }
+    },
+    client: {
+      title: "Client context",
+      content: "A large offshore RCM provider serving multiple US health systems. They processed high volumes of prior authorization requests manually, relying on hundreds of agents to review clinical documentation, log into payer portals, and sit on hold with insurance companies.",
+      constraints: [
+        "High volume of manual calls to insurers",
+        "Complex clinical documentation review required",
+        "Strict SLA requirements for turnaround times",
+        "Disparate EHR systems (Epic, Athena, Cerner)"
+      ]
+    },
+    problem: {
+      title: "The problem",
+      points: [
+        "Wait times on insurer phone lines averaged 45+ minutes",
+        "Manual data entry between portals and EHRs caused errors",
+        "Clinical documentation was often missing or incomplete",
+        "Scaling operations required linear headcount growth"
+      ],
+      impact: "Authorization delays led to rescheduled procedures and patient leakage, while operational costs for the RCM provider soared."
+    },
+    failure: {
+      title: "Why previous approaches didn’t work",
+      points: [
+        "RPA bots broke whenever payer portals changed UI",
+        "Standard OCR couldn't interpret complex clinical notes",
+        "Humans were still needed for every phone call",
+        "Standalone point solutions didn't integrate with the EHR"
+      ],
+      closing: "The bottleneck wasn't data entry — it was the phone call and the clinical context."
+    },
+    ownership: {
+      title: "What Stillwater took responsibility for",
+      intro: "Stillwater owned the prior authorization workflow end-to-end in production.",
+      scope: [
+        "Clinical document ingestion & OCR classification",
+        "EHR/EMR bi-directional synchronization",
+        "AI Voice Agent for payer phone calls",
+        "Exception handling & peer-to-peer prep",
+        "Final authorization status write-back"
+      ]
+    },
+    solution: {
+      title: "The solution",
+      body: "Stillwater deployed a multi-agent AI system. One layer processed incoming referral documents, extracting CPT codes and clinical justification. Another layer (AI Voice Agents) autonomously called payers to verify requirements and submit authorizations verbally when portals were unavailable. A third layer ensured all data was written back to the EHR in real-time.",
+      principles: [
+        "Voice AI for phone interactions",
+        "Clinical reasoning for document review",
+        "Deep EHR integration for one-touch workflows"
+      ]
+    },
+    system: {
+      title: "System design",
+      description: "A hybrid AI architecture combining vision models for documents and conversational voice agents for telephony, all orchestrated by a central workflow engine.",
+      components: [
+        { title: "Ingestion", desc: "Multi-modal OCR for fax/PDF clinical docs" },
+        { title: "Reasoning", desc: "LLM extraction of CPT codes & medical necessity" },
+        { title: "Voice Agent", desc: "AI telephony bot for insurer interactions" },
+        { title: "Sync", desc: "Bi-directional HL7/FHIR integration with EHR" },
+        { title: "Control", desc: "Nurse review loop for denials/exceptions" }
+      ]
+    },
+    readiness: {
+      title: "Operational rollout",
+      body: "We integrated directly into the RCM provider's existing queues. Agents were retrained to handle only 'complex denials' and 'peer-to-peer' preparation, while the AI handled the routine volume of stats and submissions.",
+      areas: [
+        "Shift from 'doer' to 'reviewer' for staff",
+        "Voice agent script calibration",
+        "Custom EHR adapter deployment",
+        "Real-time audit logging"
+      ],
+      closing: " staff moved from being 'on hold' to managing care coordination."
+    },
+    results: {
+      title: "Results",
+      primary: {
+        value: "45%",
+        label: "reduction in turnaround time"
+      },
+      secondary: [
+        "Zero hold times for human agents",
+        "100% audit trail of all payer conversations",
+        "Seamless write-back to client EHRs"
+      ]
+    },
+    whyWorked: {
+      title: "Why this worked",
+      points: [
+        "We successfully deployed AI voice agents in production",
+        "We solved the 'unstructure data' problem with LLMs",
+        "We didn't just build a tool; we took the volume",
+        "Deep integration meant no copy-pasting for humans"
+      ]
+    },
+    cta: {
+      headline: "If prior auth is your bottleneck, we should talk.",
+      button: "Start a conversation"
+    }
+  },
+  "healthcare-catheter-coverage": {
+    hero: {
+      label: "CASE STUDY — MEDICAL SUPPLY & BENEFITS VERIFICATION",
+      title: "Autonomous Coverage Checks for Urinary Catheter Provider",
+      summary: "Automated the benefits verification process for a North American medical supply company, replacing manual insurer calls with AI voice agents that sync directly to the ERP.",
+      outcome: {
+        value: "55%",
+        label: "reduction in verification cycle time"
+      }
+    },
+    client: {
+      title: "Client context",
+      content: "A North American company providing urinary catheters and supplies across multiple product lines including pelvic floor health, fertility, infectious disease, and pediatrics. Orders arrived via fax, requiring manual data entry and lengthy phone calls to insurers to verify coverage.",
+      constraints: [
+        "Dependencies on faxed orders",
+        "20-30 minute hold times with insurers per order",
+        "Complex coverage rules (deductibles, limitations)",
+        "Manual data entry into ERP"
+      ]
+    },
+    problem: {
+      title: "The problem",
+      points: [
+        "Staff spent hours on hold with insurers daily",
+        "Verification delays slowed down shipment release",
+        "Manual transcription from calls to ERP caused data errors",
+        "Scaling volume meant hiring more call center staff"
+      ],
+      impact: "Operational bottlenecks restricted growth and delayed patient access to critical supplies."
+    },
+    failure: {
+      title: "Why previous approaches didn’t work",
+      points: [
+        "Patient portals didn't cover all smaller payers",
+        "Standard API checks often lacked specific limitation details",
+        "Human teams were limited by phone bandwidth",
+        "Simple OCR couldn't handle the variety of incoming fax formats"
+      ],
+      closing: "You can't API your way out of a phone-based insurance system."
+    },
+    ownership: {
+      title: "What Stillwater took responsibility for",
+      intro: "Stillwater deployed an end-to-end AI workforce to handle the verification process.",
+      scope: [
+        "Fax ingestion and data extraction",
+        "AI Voice Agent for payer phone interactions",
+        "Coverage detail extraction (deductibles, limits)",
+        "Direct synchronization with internal ERP",
+        "Exception handling for complex cases"
+      ]
+    },
+    solution: {
+      title: "The solution",
+      body: "We built an AI voice agent system that reads incoming order data, autonomously calls insurers to verify specific coverage details, and writes the results back to the ERP. The system handles multiple product lines and adapts to different insurer IVRs.",
+      principles: [
+        "Voice-first automation for payer connectivity",
+        "Seamless ERP synchronization",
+        "Multi-product line adaptability"
+      ]
+    },
+    system: {
+      title: "System design",
+      description: "An integrated pipeline moving data from paper faxes to verified ERP records without human touch.",
+      components: [
+        { title: "Ingest", desc: "OCR extraction from incoming faxes" },
+        { title: "Voice", desc: "AI Agent calling insurers for verification" },
+        { title: "Logic", desc: "Coverage logic for catheters & fertility" },
+        { title: "Sync", desc: "Write-back to client ERP system" },
+        { title: "Alerts", desc: "Notification for coverage denials" }
+      ]
+    },
+    readiness: {
+      title: "Operational rollout",
+      body: "The system was rolled out product line by product line, starting with urinary catheters. We worked with the operations team to define the exact questions the AI needed to ask insurers for each specific product type.",
+      areas: [
+        "IVR navigation mapping",
+        "Questionnaire standardization per product",
+        "ERP field mapping",
+        "Staff retraining for exception handling"
+      ],
+      closing: "Staff moved from holding patterns to handling complex patient advocacy."
+    },
+    results: {
+      title: "Results",
+      primary: {
+        value: "55%",
+        label: "reduction in verification time"
+      },
+      secondary: [
+        "Eliminated 20-30 minute hold times per order",
+        "100% accurate data entry into ERP",
+        "Scalable across new product lines immediately"
+      ]
+    },
+    whyWorked: {
+      title: "Why this worked",
+      points: [
+        "We automated the phone call, not just the data entry",
+        "We integrated deep into the legacy ERP",
+        "We handled the messy reality of faxed orders",
+        "The solution scaled horizontally across product lines"
+      ]
+    },
+    cta: {
+      headline: "If you're stuck on hold with insurers, we should talk.",
       button: "Start a conversation"
     }
   }
