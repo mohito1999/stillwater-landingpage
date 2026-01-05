@@ -438,3 +438,115 @@ export const CASE_STUDIES_CONTENT = {
     }
   }
 };
+
+export const RCM_PRICING_COPY = {
+  hero: {
+    headline: "Pricing & Engagement Model for Healthcare RCM Automation",
+    subHeadline: "How we pilot, price, and scale AI workflows across revenue cycle operations",
+    supporting: "Built for teams evaluating production-grade RCM automation"
+  },
+  overview: {
+    title: "How Engagements Typically Start",
+    points: [
+      {
+        title: "Structured Activation",
+        desc: "Engagements begin with a structured activation phase to align teams and goals."
+      },
+      {
+        title: "Validation in Workflow",
+        desc: "This phase validates automation effectiveness directly within real RCM workflows."
+      },
+      {
+        title: "Defined Scope",
+        desc: "Success criteria and operational scope are mutually defined upfront."
+      },
+      {
+        title: "Value-First Rollout",
+        desc: "Production rollout follows only once value is demonstrated and proven."
+      }
+    ]
+  },
+  pilot: {
+    title: "RCM Pilot & Activation",
+    details: {
+      duration: "30 days",
+      fee: "$5,000",
+      feeNote: "(fixed)"
+    },
+    includes: [
+      { item: "AI Calling", value: "1,500 minutes" },
+      { item: "OCR / Fax Pages", value: "3,000 pages" },
+      { item: "Workflow Setup", value: "1–2 RCM workflows" },
+      { item: "EMR / System Updates", value: "Limited scope" },
+      { item: "Success Criteria", value: "Defined jointly" }
+    ],
+    overages: [
+      { type: "AI Calling", cost: "$0.40 / minute" },
+      { type: "OCR / Fax Pages", cost: "$0.12 / page" }
+    ],
+    positioning: "This is a paid pilot that includes real usage, not a demo. If it doesn’t create value, you don’t proceed."
+  },
+  production: {
+    title: "Production Pricing Plans",
+    disclaimer: "Pricing reflects workflow scope and usage volume. Plans scale as automation expands.",
+    plans: [
+      {
+        name: "Core — RCM Automation",
+        fee: "$3,000 / month",
+        includes: [
+          { label: "AI Calling", value: "5,000 minutes" },
+          { label: "OCR / Fax Pages", value: "10,000 pages" }
+        ],
+        overages: [
+          { label: "Overage – Calling", value: "$0.35 / min" },
+          { label: "Overage – OCR", value: "$0.10 / page" }
+        ],
+        support: "Slack + Email",
+        supporting: "Replaces ~1–2 RCM operations staff"
+      },
+      {
+        name: "Growth — RCM at Scale",
+        fee: "$6,500 / month",
+        includes: [
+          { label: "AI Calling", value: "20,000 minutes" },
+          { label: "OCR / Fax Pages", value: "40,000 pages" }
+        ],
+        overages: [
+          { label: "Overage – Calling", value: "$0.25 / min" },
+          { label: "Overage – OCR", value: "$0.06 / page" }
+        ],
+        support: "Priority support + SLA",
+        supporting: "Manages follow-ups, intake, eligibility, and denial workflows"
+      },
+      {
+        name: "Enterprise — Managed RCM Automation",
+        fee: "$12,000 / month",
+        includes: [
+          { label: "AI Calling", value: "75,000 minutes" },
+          { label: "OCR / Fax Pages", value: "150,000 pages" }
+        ],
+        overages: [
+          { label: "Overage – Calling", value: "$0.18 / min" },
+          { label: "Overage – OCR", value: "$0.04 / page" }
+        ],
+        hosting: "Customer-managed private cloud",
+        support: "Dedicated channel + SLA",
+        supporting: ""
+      }
+    ]
+  },
+  deployment: {
+    title: "Deployment & Data Security",
+    points: [
+      "All deployments run in isolated private cloud environments",
+      "Architected to follow HIPAA-aligned data handling practices",
+      "Security controls and data flows are designed to align with SOC 2 principles",
+      "Private cloud deployments offer stronger isolation and control than shared SaaS models"
+    ]
+  },
+  cta: {
+    title: "Next Steps",
+    text: "If you’re evaluating RCM automation and want clarity on scope, pricing, and rollout, we should talk.",
+    button: "Continue the Conversation"
+  }
+};

@@ -12,6 +12,7 @@ import { FinalCTA } from './components/FinalCTA';
 import { Footer } from './components/Footer';
 import { LogisticsPage } from './components/LogisticsPage';
 import { HealthcareRCMPage } from './components/HealthcareRCMPage';
+import { PricingEngagementPage } from './components/PricingEngagementPage';
 import { CaseStudiesIndex } from './components/CaseStudiesIndex';
 import { CaseStudyPage } from './components/CaseStudyPage';
 
@@ -66,6 +67,7 @@ function App() {
             <Route path="/healthcare" element={<HealthcareRCMPage />} />
             <Route path="/case-studies" element={<CaseStudiesIndex />} />
             <Route path="/case-studies/:id" element={<CaseStudyPage />} />
+            <Route path="/rcm-pricing-structure" element={<PricingEngagementPage />} />
           </Routes>
         </main>
 
