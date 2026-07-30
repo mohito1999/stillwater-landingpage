@@ -24,7 +24,7 @@ export const Footer: React.FC = () => {
               {FOOTER_COPY.positioning}
             </p>
             <div className="pt-4 text-xs text-stone-400">
-              © {new Date().getFullYear()} {COMPANY_NAME}. All rights reserved.
+              © {new Date().getFullYear()} Reboot Labs. All rights reserved.
             </div>
           </div>
 
